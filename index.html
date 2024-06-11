@@ -69,21 +69,32 @@
             transform: scale(1.1);
         }
 
-        .bottomRightBlock {
+        .bottom-overlay {
             position: fixed;
-            bottom: 10px;
-            right: 10px;
-            width: 150px;
-            height: 80px;
-            background: rgba(117, 0, 128, 0.575);
-            border-radius: 5px;
-            overflow: hidden;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 160px; 
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0px 0px 10px rgba(228, 2, 228, 0.514);
+            opacity: 0;
+            animation: fadeSlideIn 1.4s forwards 0.7s;
+        }
+
+        .bottomRightBlock {
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0px 0px 10px rgba(247, 0, 33, 0.568);
-            opacity: 0;
-            animation: fadeSlideIn 1.4s forwards 0.7s;
+            flex-direction: column;
+            width: 150px;
+            height: 120px; 
+            overflow: hidden;
+            margin-left: 10px; 
         }
 
         .bottomRightBlock img {
@@ -93,9 +104,10 @@
         }
 
         .bottomRightBlock p {
-            margin: 0;
-            font-size: 16px;
+            margin: 5px 0 0 0;
+            font-size: 12px;
             color: #ffffffa4;
+            text-align: center;
         }
 
         .profile-pic {
@@ -139,11 +151,6 @@
             display: flex;
             align-items: center;
             flex-direction: column;
-            position: fixed;
-            bottom: 10px;
-            left: 10px;
-            opacity: 0;
-            animation: fadeSlideIn 1.4s forwards 0.6s;
         }
 
         .music-player-image {
@@ -227,20 +234,22 @@
             <a href="https://www.instagram.com/gmezarde/" style="background-image: url('imagens/image3.jpg');"></a>
         </div>
     </div>
-    <div class="bottomRightBlock">
-        <img src="imagens/potsuDEV.jpg" alt="Image">
-        <p>Potsu DEV</p>
-    </div>
-    <div class="music-player fadeSlideIn">
-        <div class="music-info">
-            <div class="music-title">Remembering</div>
-            <div class="music-artist">Yutaka Yamada</div>
+    <div class="bottom-overlay">
+        <div class="music-player">
+            <div class="music-info">
+                <div class="music-title">Remembering</div>
+                <div class="music-artist">Yutaka Yamada</div>
+            </div>
+            <div class="music-player-image">
+                <img src="imagens/music.jpg" alt="Music">
+            </div>
+            <div class="music-player-controls">
+                <button id="play"><i class="fas fa-play"></i></button>
+            </div>
         </div>
-        <div class="music-player-image">
-            <img src="imagens/music.jpg" alt="Music">
-        </div>
-        <div class="music-player-controls">
-            <button id="play"><i class="fas fa-play"></i></button>
+        <div class="bottomRightBlock">
+            <img src="imagens/potsuDEV.jpg" alt="Image">
+            <p></p>
         </div>
     </div>
     <audio id="audio-player" src="music/song.mp3"></audio>
@@ -266,4 +275,3 @@
     </script>
 </body>
 </html>
-
