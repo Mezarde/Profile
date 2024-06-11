@@ -16,7 +16,7 @@
         }
 
         .background-video {
-            position: absolute;
+            position: fixed; /* Alterado para fixed */
             top: 0;
             left: 0;
             width: 100%;
@@ -24,6 +24,7 @@
             object-fit: cover;
             opacity: 0;
             animation: fadeSlideIn 0s forwards;
+            z-index: -1; /* Adicionado para garantir que o vídeo fique atrás do conteúdo */
         }
 
         .centerBox {
