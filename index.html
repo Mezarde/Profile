@@ -11,18 +11,17 @@
             margin: 0;
             padding: 0;
             font-family: 'Roboto Mono', monospace;
-            overflow: hidden;
+            overflow: auto;
             background-color: #000;
         }
 
         .background-video {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: -1;
             opacity: 0;
             animation: fadeSlideIn 0s forwards;
         }
@@ -84,6 +83,7 @@
             box-shadow: 0px 0px 10px rgba(228, 2, 228, 0.514);
             opacity: 0;
             animation: fadeSlideIn 1.4s forwards 0.7s;
+            z-index: 1;
         }
 
         .bottomRightBlock {
@@ -92,8 +92,7 @@
             align-items: center;
             flex-direction: column;
             width: 150px;
-            height: 120px; 
-            overflow: hidden;
+            height: 140px; 
             margin-left: 10px; 
         }
 
@@ -105,9 +104,10 @@
 
         .bottomRightBlock p {
             margin: 5px 0 0 0;
-            font-size: 12px;
+            font-size: 14px; 
             color: #ffffffa4;
             text-align: center;
+            word-break: break-all; 
         }
 
         .profile-pic {
@@ -216,7 +216,7 @@
     </style>
 </head>
 <body>
-    <video class="background-video" autoplay loop muted>
+    <video class="background-video" autoplay loop muted preload="auto">
         <source src="imagens/background.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -249,7 +249,7 @@
         </div>
         <div class="bottomRightBlock">
             <img src="imagens/potsuDEV1.jpg" alt="Image">
-            <p></p>
+            <p>PotsuDEV</p>
         </div>
     </div>
     <audio id="audio-player" src="music/song.mp3"></audio>
